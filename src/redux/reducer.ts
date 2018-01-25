@@ -1,9 +1,9 @@
 import { combineReducers } from "redux"
 
-import * as blogs from "../dashboard/reducers/blogReducers"
-import * as user from "../auth/reducers/userReducer"
+import streamReducer from "../containers/Dashboard/redux/reducer"
+import userReducer from "../containers/Login/redux/reducer"
 
 export default combineReducers({
-  blogs: blogs.reducer,
-  user: user.reducer
+  stream: streamReducer,
+  user: userReducer
 })

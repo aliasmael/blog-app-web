@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Home from '../app/components/Home'
-import LoginPage from '../auth/containers/LoginPage'
-import DashboardPage from '../dashboard/containers/DashboardPage'
+import Home from '../containers/Home'
+import LoginPage from '../containers/Login'
+import DashboardPage from '../containers/Dashboard'
 
 export const RouteMap = () => (
 	<div>
