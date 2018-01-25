@@ -17,7 +17,7 @@ export class BlogCard extends React.Component<BlogCardProps, {}> {
         style={{marginBottom: 10}}
         >
         <Meta
-          avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+          avatar={<Avatar src="assets/images/user_default.png" />}
           title={this.props.blog.data.title}
           description={this.props.blog.data.decription}
         />
