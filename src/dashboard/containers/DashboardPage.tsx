@@ -4,7 +4,7 @@ import { fetchBlogs } from "../actions/blogActions"
 import { Blog } from "../../Service/models"
 import  Dashboard from '../components/Dashboard'
 import { Store } from '../../Service/models' 
-import store from "../../store"
+import store from "../../redux/store"
 
 export interface IDashboardProps { 
   blogs: Blog[]
