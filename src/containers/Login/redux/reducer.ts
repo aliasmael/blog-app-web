@@ -13,7 +13,7 @@ const authUser: User = {
 	firstname: 'Ali',
 	lastname: 'Ismael',
 	title: 'Software Developer',
-	profileimage: 'https://www.google.nl/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwirg4LLnPTYAhUMGuwKHXfMAu8QjRwIBw&url=http%3A%2F%2Fwww.winhelponline.com%2Fblog%2Freplace-default-user-account-picture-avatar-windows-10%2F&psig=AOvVaw3Mo-oFyz9Ok9B74h5KlC0k&ust=1517007740138783',
+	profileimage: 'assets/images/user_default.png',
   isGuest: false,
 	company: 'BlogApp'
 }
@@ -24,7 +24,7 @@ const guestUser: User = {
 	firstname: 'Guest',
 	lastname: 'User',
 	title: '',
-	profileimage: 'https://www.google.nl/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwirg4LLnPTYAhUMGuwKHXfMAu8QjRwIBw&url=http%3A%2F%2Fwww.winhelponline.com%2Fblog%2Freplace-default-user-account-picture-avatar-windows-10%2F&psig=AOvVaw3Mo-oFyz9Ok9B74h5KlC0k&ust=1517007740138783',
+	profileimage: 'assets/images/user_default.png',	
   isGuest: true,
   company: ''
 }
