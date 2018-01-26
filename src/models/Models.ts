@@ -1,5 +1,5 @@
 import { IStreamState } from '../components/Stream/models/Models'
-import { IUserState } from '../containers/Login/models/Models'
+import { IUserState } from '../components/LoginForm/models/Models'
 
 export interface Signature {
 	at: string,

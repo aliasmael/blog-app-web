@@ -2,7 +2,7 @@ import * as React from "react"
 import { connect } from "react-redux"
 import { Store, User } from "../../models/Models"
 import store from "../../redux/store"
-import { login } from './redux/actions'
+import { login } from '../../components/LoginForm/redux/actions'
 import LoginForm from '../../components/LoginForm'
 import { Row, Col } from "antd/lib/grid";
 
