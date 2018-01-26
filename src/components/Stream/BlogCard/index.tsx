@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Blog } from "../../../containers/Dashboard/models/Models"
+import { Blog } from "../models/Models"
 import { Card, Icon, Avatar } from 'antd';
 const { Meta } = Card;
 

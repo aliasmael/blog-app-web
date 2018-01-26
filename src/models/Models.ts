@@ -1,4 +1,4 @@
-import { IStreamState } from '../containers/Dashboard/models/Models'
+import { IStreamState } from '../components/Stream/models/Models'
 import { IUserState } from '../containers/Login/models/Models'
 
 export interface Signature {
