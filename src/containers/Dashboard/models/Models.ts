@@ -1,4 +1,5 @@
 import { Trace, User } from '../../../models/Models'
+import { RemoteData } from '../../../models/RemoteData'
 
 interface BlogData {
 	title: string,
@@ -14,8 +15,5 @@ export interface Blog {
 }
 
 export interface IStreamState {
-	blogs: Blog[],
-	fetching: boolean,
-	fetched: boolean,
-	error: boolean
+	blogs: RemoteData<string, Blog[]>
 }
