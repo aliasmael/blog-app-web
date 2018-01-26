@@ -1,97 +1,110 @@
 import * as React from 'react'
-import { ILoginForm } from '../../containers/Login'
-import { Form, Icon, Input, Button, Checkbox } from 'antd'
-import { CSSProperties } from 'react'
-const FormItem = Form.Item;
+import Form from './components/LoginForm'
+import { ILoginForm, ILoginFormErrors } from './models/Models'
+import store from '../../redux/store'
+import { login } from './redux/actions'
 
-const styles = {
-	form: {
-		heght: 500,
-		width: '100%'
-	} as CSSProperties,
-	textInput: {
-		height: 40
-	} as CSSProperties,
-	submitBtn: {
-		width: '100%'
-	} as CSSProperties,
-	forgetPassword: {
-		float: 'right'
-	} as CSSProperties,
-};
-
-interface ILoginFormProps {
-	onSubmit: (e: React.FormEvent<HTMLFormElement>) => void,
-	onChange: (e: React.FormEvent<HTMLInputElement>) => void,
-	form: ILoginForm
+interface ILoginState {
+	loginForm: ILoginForm
 }
 
-const LoginForm = (props: ILoginFormProps) => {
-	let onSubmit: (e: React.FormEvent<HTMLFormElement>) => void = props.onSubmit
-	let onChange: (e: React.FormEvent<HTMLInputElement>) => void = props.onChange
-	let form: ILoginForm = props.form
-
-
-	return (
-		<Form onSubmit={onSubmit} className="login-form" style={styles.form}>
-			<FormItem
-				validateStatus={form.errors.username ? 'error' : 'success'}
-				required
-				>
-				<Input
-					prefix={
-						<Icon
-							type="user"
-							style={{ color: 'rgba(0,0,0,.25)' }}
-							/>
-						}
-					placeholder="Username"
-					name="username"
-					onChange={onChange}
-					value={form.username}
-					style={styles.textInput}
-					/>
-			</FormItem>
-			<FormItem
-				validateStatus={form.errors.password ? 'error' : 'success'}
-				required
-				>
-				<Input
-					prefix={
-						<Icon
-							type="lock"
-							style={{ color: 'rgba(0,0,0,.25)' }} 
-							/>
-						}
-					type="password"
-					placeholder="Password"
-					name="password"
-					onChange={onChange}
-					value={form.password}
-					style={styles.textInput}					
-				/>
-			</FormItem>
-			<FormItem>
-				<Checkbox>Remember me</Checkbox>
-				<a 
-					className="login-form-forgot" 
-					href=""
-					style={styles.forgetPassword}
-					>
-					Forgot password
-				</a>
-				<Button 
-					type="primary" 
-					htmlType="submit" 
-					className="login-form-button"
-					style={styles.submitBtn}
-					>
-					Log in
-				</Button>
-				Or <a href="">register now!</a>
-			</FormItem>
-		</Form>
-	)
+const initialForm: ILoginForm = {
+	username: '',
+	password: '',
+	isValid: false,
+	errors: {
+		username: '',
+		password: '',
+		summary: ''
+	}
 }
 
-export default LoginForm;
+const initialState: ILoginState = {
+	loginForm: initialForm
+}
+
+export default class LoginForm extends React.Component<{}, ILoginState> {
+	/**
+	 * Class constructor.
+	 */
+	constructor(props: never) {
+		super(props);
+
+		this.state = initialState
+		this.login = this.login.bind(this);
+		this.onChange = this.onChange.bind(this);
+	}
+
+	// Form validation
+	validate() {
+		let isValid: boolean = true
+		let errors: ILoginFormErrors = {
+			username: '',
+			password: '',
+			summary: ''
+		}
+
+		// validate username
+		if (this.state.loginForm.username.trim() == '') {
+			errors.username = 'This field is required'
+			isValid = false
+		}
+
+		// validate password
+		if (this.state.loginForm.password.trim() == '') {
+			errors.password = 'This field is required'
+			isValid = false
+		}
+
+		// Update state
+		this.setState({
+			...this.state,
+			loginForm: {
+				...this.state.loginForm,
+				errors: errors,
+				isValid: isValid
+			}
+		})
+
+		return isValid
+	}
+
+	// Handle login form submittion
+	login(e: React.FormEvent<HTMLFormElement>) {
+		e.preventDefault()
+
+		// if form valid try login
+		if (this.validate()) {
+			// dispatch login action
+			var username = this.state.loginForm.username;
+			var password = this.state.loginForm.password;
+			store.dispatch(login(username, password));
+		}
+	}
+
+	// Handle changes in login form inputs
+	onChange(e: React.FormEvent<HTMLInputElement>) {
+		const field = e.currentTarget.name;
+		const loginForm: ILoginForm = this.state.loginForm;
+		loginForm[field] = e.currentTarget.value;
+
+
+		// Update state
+		this.setState({
+			...this.state,
+			loginForm: loginForm
+		})
+	}
+
+	// Render the component.
+	render() {
+		return (
+			<Form
+				onSubmit={this.login}
+				onChange={this.onChange}
+				form={this.state.loginForm}
+			/>
+		)
+	}
+
+}
