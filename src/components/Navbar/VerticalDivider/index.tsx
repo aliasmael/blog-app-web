@@ -17,7 +17,7 @@ export interface IVerticalDividerProps {
 
 }
 
-class VerticalDivider extends React.Component<IVerticalDividerProps> {
+export default class VerticalDivider extends React.Component<IVerticalDividerProps> {
 	/**
 	 * Class constructor.
 	 */
@@ -34,5 +34,3 @@ class VerticalDivider extends React.Component<IVerticalDividerProps> {
 	}
 
 }
-
-export default VerticalDivider;

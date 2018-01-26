@@ -5,7 +5,7 @@ export interface INotificationBadgeProps {
 	notificationCount: number
 }
 
-class NotificationBadge extends React.Component<INotificationBadgeProps> {
+export default class NotificationBadge extends React.Component<INotificationBadgeProps> {
 	/**
 	 * Class constructor.
 	 */
@@ -28,5 +28,3 @@ class NotificationBadge extends React.Component<INotificationBadgeProps> {
 	}
 
 }
-
-export default NotificationBadge;

@@ -6,7 +6,7 @@ export interface ISearchBoxProps {
 
 }
 
-class SearchBox extends React.Component<ISearchBoxProps> {
+export default class SearchBox extends React.Component<ISearchBoxProps> {
 
 	// Render the component.
 	render() {
@@ -17,5 +17,3 @@ class SearchBox extends React.Component<ISearchBoxProps> {
 	}
 
 }
-
-export default SearchBox;

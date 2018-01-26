@@ -2,7 +2,7 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { User } from '../../models/Models'
 import { Store } from '../../models/Models'
-import NotificationBadge from './NotificationBadge'
+import Notifications from './Notifications'
 import AccountMenu from './AccountMenu'
 import NavMenu from './NavMenu' 
 import SearchBox from './SearchBox'
@@ -69,7 +69,7 @@ class Navbar extends React.Component<IAppNavProps> {
 					</Col>
 					<Col span={1}>
 						<Row type="flex" justify="start">
-							<NotificationBadge notificationCount={5}/>
+							<Notifications notificationCount={5}/>
 						</Row>
 					</Col>
 					<Col span={2}>

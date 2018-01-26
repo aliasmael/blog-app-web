@@ -14,7 +14,7 @@ export interface INavMenuProps {
 
 }
 
-class NavMenu extends React.Component<INavMenuProps> {
+export default class NavMenu extends React.Component<INavMenuProps> {
 
 	// Render the component.
 	render() {
@@ -42,5 +42,3 @@ class NavMenu extends React.Component<INavMenuProps> {
 	}
 
 }
-
-export default NavMenu;

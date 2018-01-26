@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { User } from '../../models/Models'
+import { User } from '../../../models/Models'
 import { Avatar } from 'antd'
 import { CSSProperties } from 'react'
 
@@ -17,7 +17,7 @@ export interface IAccountMenuProps {
 	user: User
 }
 
-class AccountMenu extends React.Component<IAccountMenuProps> {
+export default class AccountMenu extends React.Component<IAccountMenuProps> {
 	/**
 	 * Class constructor.
 	 */
@@ -46,5 +46,3 @@ class AccountMenu extends React.Component<IAccountMenuProps> {
 	}
 
 }
-
-export default AccountMenu;
