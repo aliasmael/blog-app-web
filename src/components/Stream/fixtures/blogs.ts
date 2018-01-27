@@ -11,7 +11,7 @@ export default [
         firstname: 'Ali',
         lastname: 'Ismael',
         title: 'Software Developer',
-        profileimage: 'defaultUser',
+        profileimage: 'assets/images/user_default.png',
         company: 'BlogApp',
       }
     },
@@ -38,7 +38,7 @@ export default [
         firstname: 'Ali',
         lastname: 'Ismael',
         title: 'Software Developer',
-        profileimage: 'defaultUser',
+        profileimage: 'assets/images/user_default.png',
         company: 'BlogApp',
       }
     },
@@ -65,7 +65,7 @@ export default [
         firstname: 'Ali',
         lastname: 'Ismael',
         title: 'Software Developer',
-        profileimage: 'defaultUser',
+        profileimage: 'assets/images/user_default.png',
         company: 'BlogApp',
       }
     },
