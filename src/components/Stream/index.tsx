@@ -40,14 +40,14 @@ export default class Stream extends React.Component<IStreamProps> {
 
 			case "Success":
 				return (
-					<Row gutter={16} style={style.streamWrapper}>
-						{
-							blogs.data.map((blog: Blog) => (
-								<Col span={6} key={blog.id}>
+					<Row style={style.streamWrapper}>
+						<Col span={12}>
+							{
+								blogs.data.map((blog: Blog) => (
 									<BlogCard key={blog.id} blog={blog} />
-								</Col>
-							))
-						}
+								))
+							}
+						</Col>
 					</Row>
 				)
 		}

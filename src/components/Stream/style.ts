@@ -7,8 +7,9 @@ const style = {
     marginTop: 10
   } as CSSProperties,
   streamWrapper: {
-    marginTop: 10,
-    maxWidth: '100%'
+    display: 'flex',
+    justifyContent: 'center',    
+    marginTop: 10
   } as CSSProperties
 }
 
