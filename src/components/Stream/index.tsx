@@ -1,8 +1,10 @@
 import * as React from 'react'
 import { RemoteData } from '../../models/RemoteData'
 import { Blog } from './models/Models'
+import { Loader } from '../Loader'
 import { Row, Col } from 'antd/lib/grid'
 import BlogCard from './BlogCard'
+import style from './style'
 
 // Redux
 import { fetchBlogs } from './redux/actions'
@@ -27,14 +29,18 @@ export default class Stream extends React.Component<IStreamProps> {
 				return ""
 
 			case "Loading":
-				return "Loading..."
+				return (
+					<div style={style.loaderWrapper}>
+						<Loader />
+					</div>
+				)
 
 			case "Failure":
 				return blogs.error
 
 			case "Success":
 				return (
-					<Row gutter={16} style={{ marginTop: 10, maxWidth: '100%' }}>
+					<Row gutter={16} style={style.streamWrapper}>
 						{
 							blogs.data.map((blog: Blog) => (
 								<Col span={6} key={blog.id}>
