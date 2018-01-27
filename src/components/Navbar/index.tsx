@@ -9,22 +9,9 @@ import SearchBox from './SearchBox'
 import VerticalDivider from './VerticalDivider'
 import { Layout } from 'antd'
 import { Row, Col } from 'antd/lib/grid'
-import { CSSProperties } from 'react'
-const { Header } = Layout;
+import style from './style'
 
-const styles = {
-	header: {
-		background: 'white',
-		borderBottom: '1px solid #e8e8e8',
-		height: 'fit-content'
-	} as  CSSProperties,
-	logo: {
-		fontSize: 25,
-		fontFamily: 'monospace',
-		fontStyle: 'italic',
-		fontWeight: 900
-	} as  CSSProperties
-}
+const { Header } = Layout
 
 export interface IAppNavProps {
 	user: User
@@ -49,11 +36,11 @@ class Navbar extends React.Component<IAppNavProps> {
 		const { user } = this.props;
 
 		return (
-			<Header style={styles.header}>
+			<Header style={style.header}>
 				<Row type="flex" justify="center" align="middle">
 					<Col span={2}>
-						<div style={styles.logo}>
-							Blogger
+						<div style={style.logo}>
+							BlogApp
 						</div>
 					</Col>
 					<Col span={8}>
