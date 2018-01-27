@@ -7,7 +7,7 @@ export interface BlogCardProps {
   blog: Blog
 }
 
-export class BlogCard extends React.Component<BlogCardProps, {}> {
+export default class BlogCard extends React.Component<BlogCardProps, {}> {
   render() {
     return (
       <Card
