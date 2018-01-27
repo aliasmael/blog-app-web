@@ -27,3 +27,7 @@ Start a development server
 cd /root-folder/
 npm run dev
 ```
+
+# Screenshots
+
+<img src="assets/screenshots/dashboard.png" alt="Dashboard"/>
