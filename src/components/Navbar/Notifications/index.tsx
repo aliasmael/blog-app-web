@@ -20,7 +20,7 @@ export default class NotificationBadge extends React.Component<INotificationBadg
 		return (
 
 			<a href="#">
-				<Badge count={this.props.notificationCount}>
+				<Badge count={this.props.notificationCount} style={style.notificationBadge}>
 					<Icon type="notification" style={style.notificationIcon} />
 				</Badge>
 			</a>
